@@ -6,11 +6,10 @@ Yawar Siddiqui, Julien Valentin and Matthias Niessner, ["ViewAL: Active Learning
 
 ![VisualizationGIF](https://user-images.githubusercontent.com/932110/69557468-f190ae00-0fa6-11ea-9321-309ba55da63d.gif)
 
-## Dependencies 
+## Running
 
-Check the `requirements.txt` for dependencies. 
+#### Arguments
 
-## Arguments
 ```
 train_active.py [-h] [--backbone {resnet,xception,drn,mobilenet}]
                        [--out-stride OUT_STRIDE]
@@ -39,7 +38,7 @@ train_active.py [-h] [--backbone {resnet,xception,drn,mobilenet}]
 
 Run `--help` for more details.
 
-#### Active Selection Mode
+#### Active Selection Modes
 
 | Option        | Method  |
 | --------------- | ------------ |
@@ -58,37 +57,44 @@ For a description of the methods, check out appendix section of the paper.
 
 #### Example commands
 
-```
-# View AL - sample dataset 
 
+##### View AL
+```sh
+# sample dataset
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname regional_viewmckldiv_spx_1_7x2_lr-0.0004_bs-6_ep-60_wb-0_lrs-1_240x320 --base-size 240,320 --max-iterations 7 --active-selection-size 2 --active-selection-mode viewmc_kldiv_region --region-selection-mode superpixel
 
+# scenenet-rgbd
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname regional_viewmckldiv_spx_1_7x1500_lr-0.0004_bs-6_ep-60_wb-0_lrs-1_240x320 --base-size 240,320 --max-iterations 7 --active-selection-size 1500 --active-selection-mode viewmc_kldiv_region --region-selection-mode superpixel
+```
 
-# Random
-
+##### Random
+```sh
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname random_0_7x1500_lr-0.0004_bs-6_ep-60_wb-0_lrs-0_240x320 --base-size 240,320 --max-iterations 7 --active-selection-size 1500 --active-selection-mode random
+```
 
-# Softmax Entropy
-
+##### Softmax Entropy
+```sh
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname softmax_entropy_0_7x1500_lr-0.0004_bs-6_ep-50_wb-0_lrs-1_240x320 --base-size 240,320 --max-iterations 7 --active-selection-size 1500 --active-selection-mode softmax_entropy
+```
 
-# Regional MCDR
-
+##### Regional MCDR
+```sh
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname regional_voteentropy_window_0_7x1500_lr-0.0004_bs-6_ep-60_wb-0_lrs-1_240x320 --base-size 240,320 --max-iterations 7 --active-selection-size 1500 --active-selection-mode voteentropy_region --region-selection-mode window
+```
 
-# CEAL 
-
+##### CEAL 
+```sh
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname ceal-0.00275_7x1500_lr-0.0005_bs-6_ep-50_wb-0_lrs-1_240x320 --max-iterations 7 --active-selection-size 1500 --base-size 240,320 --active-selection-mode ceal --start-entropy-threshold 0.0275 --entropy-change-per-selection 0.001815
+```
 
-# MCDR
-
+##### MCDR
+```sh
 python train_active.py --dataset scenenet-rgbd --workers 2 --epochs 50 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 35 --checkname mcdropoutentropy_0_7x1500_lr-0.0004_bs-6_ep-50_wb-0_lrs-1_240x320 --base-size 240,320 --max-iterations 7 --active-selection-size 1500 --active-selection-mode voteentropy_soft
+```
 
-# Full training 
-
+##### Full training 
+```sh
 python train.py --dataset scenenet-rgbd --workers 2 --epochs 70 --eval-interval 5 --batch-size=6 --lr 0.0004 --use-lr-scheduler --lr-scheduler step --step-size 40 --checkname full-run_0_lr-0.0004_bs-6_ep-60_wb-0_lrs-0_240x320 --base-size 240,320
-
 ```
 
 ## Files
