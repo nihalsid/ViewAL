@@ -1,0 +1,9 @@
+__pycache__
+dataset/scannet/raw
+dataset/scannet/dataset.lmdb
+dataset/matterport3d/raw
+dataset/matterport3d/dataset.lmdb
+dataset/scenenet-rgbd/raw
+dataset/scenenet-rgbd/dataset.lmdb
+runs/
+.vscode/
