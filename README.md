@@ -37,44 +37,7 @@ train_active.py [-h] [--backbone {resnet,xception,drn,mobilenet}]
                        [--entropy-change-per-selection ENTROPY_CHANGE_PER_SELECTION]
 ```
 
-#### Description
-| Argument        | Description  |
-| --------------- | ------------ |
-| -h, --help | show this help message and exit|
-| --backbone {resnet,xception,drn,mobilenet} | backbone name (default: mobilenet)|
-| --out-stride OUT_STRIDE | network output stride (default: 16)|
-| --dataset {scannet,scenenet-rgbd,matterport3d,scannet-sample} | dataset name (default: scannet-sample)|
-| --workers N | dataloader threads|
-| --base-size BASE_SIZE | base image size|
-| --sync-bn SYNC_BN | whether to use sync bn (default: False)|
-| --loss-type {ce,focal} | loss func type (default: ce)|
-| --epochs N | number of epochs to train (default: auto)|
-| --batch-size N | input batch size for training (default: auto)|
-| --use-balanced-weights | whether to use balanced weights (default: True)|
-| --lr LR | learning rate (default: auto)|
-| --lr-scheduler {step} | lr scheduler mode: (default: step)|
-| --optimizer {SGD,Adam}||
-| --step-size STEP_SIZE | step size for lr-step-scheduler|
-| --use-lr-scheduler| use learning rate scheduler|
-| --momentum M |   momentum (default: 0.9)|
-| --weight-decay M|   w-decay (default: 5e-4)|
-| --nesterov | whether use nesterov (default: False)|
-| --gpu-ids GPU_IDS|  use which gpu to train, must be a comma-separated list of integers only (default=0)|
-| --seed S |   random seed (default: -1)|
-| --checkname CHECKNAME | set the checkpoint name|
-| --eval-interval EVAL_INTERVAL | evaluation interval (default: 5) - record metrics every Nth iteration|
-| --memory-hog |   load the whole dataset in RAM if true|
-| --max-iterations MAX_ITERATIONS | max active iterations|
-| --active-selection-size ACTIVE_SELECTION_SIZE | active selection size|
-| --region-size REGION_SIZE | window size for window region methods|
-| --region-selection-mode REGION_SELECTION_MODE | use superpixels or windows as region selection mode|
-| --view-entropy-mode {soft,vote,mc_dropout} | probability estimate = softmax or vote or mcdropout|
-| --active-selection-mode | described below |
-| --superpixel-dir SUPERPIXEL_DIR | directory for supepixel maps inside the dataset raw root|
-| --superpixel-coverage-dir SUPERPIXEL_COVERAGE_DIR | directory for coverage maps inside the dataset raw root|
-| --superpixel-overlap SUPERPIXEL_OVERLAP | superpixel overlap threshold|
-| --start-entropy-threshold START_ENTROPY_THRESHOLD | ceal hyperparameter|
-| --entropy-change-per-selection ENTROPY_CHANGE_PER_SELECTION | ceal hyperparameter|
+Run `--help` for more details.
 
 #### Active Selection Mode
 
@@ -91,7 +54,7 @@ train_active.py [-h] [--backbone {resnet,xception,drn,mobilenet}]
 |ceal| CEAL selection |
 |viewmc_kldiv_region| ViewAL selection|
 
-For more details, check out our paper.
+For a description of the methods, check out appendix section of the paper.
 
 #### Example commands
 
