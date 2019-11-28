@@ -2,7 +2,7 @@
 
 This repository contains the implementation for the paper:
 
-Yawar Siddiqui, Julien Valentin and Matthias Niessner, ["ViewAL: Active Learning with Viewpoint Entropy for Semantic Segmentation"](#) ([video](#))
+Yawar Siddiqui, Julien Valentin and Matthias Niessner, ["ViewAL: Active Learning with Viewpoint Entropy for Semantic Segmentation"](https://arxiv.org/abs/1911.11789) ([video](https://youtu.be/tAGdx2j-X_g))
 
 ![VisualizationGIF](https://user-images.githubusercontent.com/932110/69557468-f190ae00-0fa6-11ea-9321-309ba55da63d.gif)
 
@@ -39,6 +39,8 @@ train_active.py [-h] [--backbone {resnet,xception,drn,mobilenet}]
 Run `--help` for more details.
 
 #### Active Selection Modes
+
+Apart from implementation of our method, we provide implementation of other popular active selection methods adapted for semantic segmentation.
 
 | Option        | Method  |
 | --------------- | ------------ |
@@ -146,4 +148,12 @@ To use this repository datasets must be in the structure described in last secti
 If you use this code, please cite the paper:
 
 `
+@misc{siddiqui2019viewal,
+    title={ViewAL: Active Learning with Viewpoint Entropy for Semantic Segmentation},
+    author={Yawar Siddiqui and Julien Valentin and Matthias Nießner},
+    year={2019},
+    eprint={1911.11789},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
 `
