@@ -147,7 +147,7 @@ To use this repository datasets must be in the structure described in last secti
 
 If you use this code, please cite the paper:
 
-`
+```
 @misc{siddiqui2019viewal,
     title={ViewAL: Active Learning with Viewpoint Entropy for Semantic Segmentation},
     author={Yawar Siddiqui and Julien Valentin and Matthias Nießner},
@@ -156,4 +156,4 @@ If you use this code, please cite the paper:
     archivePrefix={arXiv},
     primaryClass={cs.CV}
 }
-`
+```
