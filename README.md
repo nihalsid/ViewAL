@@ -141,7 +141,7 @@ A small example dataset is provided with this repository in [`dataset/scannet-sa
 
 ## Data Generation
 
-To use this repository datasets must be in the structure described in last section. For creating the lmdb database, seed set, train / test splits and superpixel maps check helper scripts in [`dataset/preprocessing-scripts`](https://github.com/nihalsid/ViewAL/tree/master/dataset/preprocessing-scripts). We use [this SEEDS implementation](https://github.com/davidstutz/seeds-revised) for generating superpixels. Further, to generate superpixel coverage maps (`coverage_superpixel`) check [`utils/superpixel_projections.py`](https://github.com/nihalsid/ViewAL/blob/master/utils/superpixel_projections.py). 
+To use this repository datasets must be in the structure described in last section. For creating the lmdb database, seed set, train / test splits and superpixel maps check helper scripts in [`dataset/preprocessing-scripts`](https://github.com/nihalsid/ViewAL/tree/master/dataset/preprocessing-scripts). We use [this SEEDS implementation](https://github.com/davidstutz/seeds-revised) for generating superpixels (check [this](https://github.com/nihalsid/ViewAL/issues/4) issue for troubleshooting). Further, to generate superpixel coverage maps (`coverage_superpixel`) check [`utils/superpixel_projections.py`](https://github.com/nihalsid/ViewAL/blob/master/utils/superpixel_projections.py). 
 
 ## Citation
 
